@@ -1,0 +1,26 @@
+{
+  "name": "LC Concealer",
+  "version": "0.0.1",
+  "description": "An extension to hide the difficulty of a leetcode problem. Don't let the difficulty of a problem fool you",
+  "manifest_version": 3,
+  "permissions": ["tabs", "activeTab"],
+  "host_permissions": ["https://leetcode.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": ["https://leetcode.com/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
